@@ -38,7 +38,7 @@ public class ScraperController {
 	@Autowired
 	private ScraperRepositoryService scraperRepositoryService;
 	
-	
+	//http://localhost:8080/  starts webscraping and loads into h2 database
 	@GetMapping(path="/")
 	public void fetchDetails() {
 		
@@ -53,6 +53,8 @@ public class ScraperController {
        scraperRepositoryService.saveRepo(set1);
 		
 	}
+	
+	//queries the table , all  get all events from table.
 	
 	@GetMapping("/getEvents")
 	public Iterable<ResponseModel> getEvents(){

@@ -45,8 +45,6 @@ public class ScraperController {
 		Set<ResponseModel>  set=scraperServiceForComputerWorld.getEventDetails();
 		
 		scraperRepositoryService.saveRepo(set);
-		
-		
        Set<ResponseModel>  set1=scraperService.getEventDetails();
         
       
@@ -58,8 +56,22 @@ public class ScraperController {
 	
 	@GetMapping("/getEvents")
 	public Iterable<ResponseModel> getEvents(){
-		return scraperRepositoryService.getAllEvents();
-	}
+		long count=scraperRepositoryService.countRecords();
+		
+		if(count==0) {
+			System.out.println("inside ddd");
+			Set<ResponseModel>  set=scraperServiceForComputerWorld.getEventDetails();
+			
+			scraperRepositoryService.saveRepo(set);
+	       Set<ResponseModel>  set1=scraperService.getEventDetails();
+	        
+	      
+	       scraperRepositoryService.saveRepo(set1);
+	      
+			
+			}
+		 return scraperRepositoryService.getAllEvents();
+		}
 
 
 	 

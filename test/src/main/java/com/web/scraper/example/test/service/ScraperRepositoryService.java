@@ -25,6 +25,8 @@ public class ScraperRepositoryService {
 	return	projectRepository.findAll();
 	}
 	
-	
+	public long countRecords() {
+		return projectRepository.count();
+	}
 
 }

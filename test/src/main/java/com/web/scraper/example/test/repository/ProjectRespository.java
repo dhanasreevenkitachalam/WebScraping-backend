@@ -12,6 +12,6 @@ import com.web.scraper.example.test.model.ResponseModel;
 public interface ProjectRespository extends CrudRepository<ResponseModel, Long> {
 	
 ResponseModel findByTitle(String title);
-
+long count();
 
 }

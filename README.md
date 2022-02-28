@@ -5,7 +5,6 @@ Please find the deployable **jar file inside that target folder**
 #### To run the application, type the below command, in the command prompt after navigating to location having jar file
                           java -jar test-0.0.1-SNAPSHOT.jar
                           
- **Please go to http://localhost:8080/ in the browser ,to begin scraping after starting the springboot application. Else data will not be visible on frontend.**
 I have implemented WebScraping without Multithreading. Data is loaded into in memory H2 database.
 #### To view the data in H2 Database, clone the entire project to your system
 Open the project in any IDE, run the application as Java Application
